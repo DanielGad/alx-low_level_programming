@@ -17,7 +17,7 @@ int main(void)
 	while (n <= 'Z')
 	{
 		printf("%c \n", n);
-		n++
+		n++;
 	}
 	return (0);
 }
