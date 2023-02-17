@@ -10,7 +10,7 @@ int main(void)
 
 	char m = 'A';
 
-	while (n <= 'Z')
+	while (n <= 'z' | m <= 'Z')
 	{
 		printf("%c\n", n, m);
 		n++;
