@@ -10,13 +10,13 @@ int main(void)
 
 	while (n <= 'z')
 	{
-		printf("%c ", n);
+		printf("%c", n);
 		n++;
 	}
 	n = 'A';
 	while (n <= 'Z')
 	{
-		printf("%c ", n);
+		printf("%c", n);
 		n++;
 	}
 	return (0);
