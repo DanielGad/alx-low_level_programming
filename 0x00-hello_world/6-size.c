@@ -1,6 +1,10 @@
 #include <stdio.h>
 /**
- * main - A program that shows the function of printf
+ * main - Entry point
+ *
+ * Description: This is where the function program runs.
+ *
+ * Return: 0 (success)
  */
 int main(void)
 {
