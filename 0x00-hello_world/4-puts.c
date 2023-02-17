@@ -1,6 +1,6 @@
 #include <stdio.h>
 /*
- * main - A program that shows the function of printf.
+ * This program demonstrates how to print with puts.
  */
 int main(void)
 {
