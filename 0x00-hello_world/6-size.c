@@ -1,5 +1,7 @@
 #include <stdio.h>
-
+/**
+ * main - A program that shows the function of printf
+ */
 int main(void)
 {
 	printf("Size of char: %lu byte(s)\n", sizeof(char));
