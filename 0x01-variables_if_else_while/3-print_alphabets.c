@@ -8,13 +8,16 @@ int main(void)
 {
 	char n = 'a';
 
-	char m = 'A';
-
-	while (n <= 'z' | m <= 'Z')
+	while (n <= 'z')
 	{
-		printf("%c\n", n, m);
+		printf("%c ", n);
 		n++;
-		m++;
+	}
+	n = 'A';
+	while (n <= 'Z')
+	{
+		printf("%c \n", n);
+		n++
 	}
 	return (0);
 }
