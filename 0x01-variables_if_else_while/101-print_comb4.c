@@ -31,16 +31,12 @@ int main(void)
 						putchar(' ');
 					}
 				}
-
 				c++;
 			}
-			
 			d++;
 		}
-
 		e++;
 	}
-
 	putchar('\n');
 	return (0);
 }
