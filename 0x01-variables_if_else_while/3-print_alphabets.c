@@ -16,7 +16,7 @@ int main(void)
 	n = 'A';
 	while (n <= 'Z')
 	{
-		printf("%c\n", n);
+		printf("%c", n);
 		n++;
 	}
 	return (0);
