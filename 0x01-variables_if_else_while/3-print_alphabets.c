@@ -19,5 +19,6 @@ int main(void)
 		printf("%c", n);
 		n++;
 	}
+	printf('\n');
 	return (0);
 }
