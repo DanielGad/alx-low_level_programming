@@ -2,7 +2,9 @@
 #include <stdio.h>
 
 /**
- * main - 0-reset_to_98
+ * reset_to_98 - Entry point
+ *
+ * @n: input
  *
  * Return: 0 (success)
  */
