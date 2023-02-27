@@ -8,7 +8,7 @@
  *
  * Return: 0 (success)
  */
-int _strlen(char *s);
+int _strlen(char *s)
 {
 	int length;
 
