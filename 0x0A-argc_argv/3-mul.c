@@ -7,17 +7,13 @@
  *
  * Return: 0 if true, else 1
  */
-int main(int argc, char *argv[])
+int main()
 {
-	int a, b;
+	int a, b, pro;
 
-	if (argc == 1)
-	{
-		a = atoi(argv[1]);
-		b = atoi(argv[2]);
-		printf("%dn", a, *b);
-		return (0);
-	}
-	printf("Error\n");
+	scanf("%d %d", &a, &b);
+	pro = a * b;
+	printf("%d\n", pro);
+
 	return (1);
 }
