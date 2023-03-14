@@ -1,19 +1,26 @@
 #include <stdio.h>
-#include "main.h"
+#include <stdlib.h>
+
 /**
  * main - Entry point
- * @argc: input
- * @argv: input
- *
- * Return: 0 if true, else 1
+ * @argc: argumemnt count
+ * @argv: argument string array
+ * Return: 0 (success)
  */
-int main()
+int main(int argc, char *argv[])
 {
-	int a, b, pro;
+	int prod;
 
-	scanf("%d %d", &a, &b);
-	pro = a * b;
-	printf("%d\n", pro);
+	if (argc != 3)
+	{
+		printf("Error\n");
+		return (1);
+	}
+	else
+	{
+		prod = atoi(argv[1]) * atoi(argv[2]);
+		printf("%d\n", prod);
 
-	return (1);
+		return (0);
+	}
 }
