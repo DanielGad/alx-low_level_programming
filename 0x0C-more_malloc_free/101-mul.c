@@ -3,11 +3,13 @@
 #include <string.h>
 #include "main.h"
 /**
- * main - Entry point
+ * print - Entry point
+ * @str: input
+ * @l: input
  * Description - A program that multiplies two positive numbers.
  * Return: (success) otherwise 0
  */
-int main(void)
+void print(char *str, int l)
 {
 	int i, j;
 
