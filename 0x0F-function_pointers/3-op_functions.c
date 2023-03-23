@@ -7,9 +7,9 @@ int op_div(int a, int b);
 int op_mod(int a, int b);
 
 /**
- * op_add - Returns the sum of two numbers.
- * @a: The first number.
- * @b: The second number.
+ * op_add - Entry point Return the sum of two numbers.
+ * @a: The first num.
+ * @b: The second num.
  *
  * Return: The sum of a and b.
  */
