@@ -4,7 +4,7 @@
 #include <stddef.h>
 
 /**
- * print_numbers - prints number arguments passed to it
+ * print_numbers - print number arguments passed to it
  * @separator: the separator string or character
  * @n: the number of arguments, excluding the seperator
  * @...: the actual arguments
