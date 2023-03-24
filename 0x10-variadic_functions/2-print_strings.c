@@ -3,7 +3,7 @@
 #include <stdarg.h>
 
 /**
- * print_strings - prints the passed string arguments
+ * print_strings - print the passed string arguments
  * @separator: separates the strings
  * @n: the number of arguments passed
  * @...: the functuion arguments
