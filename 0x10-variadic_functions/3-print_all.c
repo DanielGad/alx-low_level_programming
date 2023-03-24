@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * print_all - prints arguments of different data types
+ * print_all - print arguments of different data types
  * @format: the data type specifier
  */
 void print_all(const char * const format, ...)
