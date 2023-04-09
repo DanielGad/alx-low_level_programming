@@ -20,7 +20,7 @@ int create_file(const char *filename, char *text_content)
 	}
 	fdy = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
 	wy = write(fdy, text_content, lent);
-	if (fdy == -1 || w == -1)
+	if (fdy == -1 || wy == -1)
 		return (-1);
 	close(fdy);
 	return (1);
