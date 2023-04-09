@@ -1,12 +1,11 @@
 #include "main.h"
 
 /**
- * flip_bits - counts the number of bits to change
- * to get from one number to another
- * @n: first number
- * @m: second number
+ * flip_bits - counts the number of bits
+ * @n: input first number
+ * @m: input second number
  *
- * Return: number of bits to change
+ * Return: number of bits
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
@@ -16,7 +15,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 
 	for (j = 63; j >= 0; j--)
 	{
-		curr = exclu >> i;
+		curr = exclu >> j;
 		if (curr & 1)
 			count++;
 	}
