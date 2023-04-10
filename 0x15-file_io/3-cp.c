@@ -6,34 +6,32 @@ char *create_buffer(char *file);
 void close_file(int fd);
 
 /**
- * create_buffer - A function that allocates 1024 bytes for a buffer.
+ * create_buffer - Afunction that allocates 1024 bytes for a buffer.
  * @file: input the name of the file buffer is storing chars for.
+ *
  * Return: A pointer to the newly-allocated buffer.
  */
 char *create_buffer(char *file)
 {
-	char *buff;
+	char *buffer;
 
-	buff = malloc(sizeof(char) * 1024);
-
-	if (buff == NULL)
+	buffer = malloc(sizeof(char) * 1024);
+	if (buffer == NULL)
 	{
 		dprintf(STDERR_FILENO,
 			"Error: Can't write to %s\n", file);
 		exit(99);
 	}
-
-	return (buff);
+	return (buffer);
 }
 
 /**
- * close_file - A function that Closes file descriptors.
- * @fd: input the file descriptor to be closed.
+ * close_file - A function that closes file descriptors.
+ * @fd: Input the file descriptor to be closed.
  */
 void close_file(int fd)
 {
 	int d;
-
 	d = close(fd);
 
 	if (d == -1)
@@ -44,47 +42,53 @@ void close_file(int fd)
 }
 
 /**
- * main - A function that copies the contents of a file to another file.
- * @argc: input the number of arguments supplied to the program.
- * @argv: input an array of pointers to the arguments.
+ * main - Afunction that copies the contents of a file to another file.
+ * @argc: Input the number of arguments supplied to the program.
+ * @argv: Input an array of pointers to the arguments.
  *
- * Return: 0 (success).
+ * Return: 0 success.
+ *
+ * Description: If the argument count is incorrect - exit code 97.
+ * If file_from does not exist or cannot be read - exit code 98.
+ * If file_to cannot be created or written to - exit code 99.
+ * If file_to or file_from cannot be closed - exit code 100.
  */
 int main(int argc, char *argv[])
 {
 	int fromy, toy, ry, wy;
-	char *buff;
+	char *buffer;
 
 	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	buff = create_buff(argv[2]);
+
+	buffer = create_buffer(argv[2]);
 	fromy = open(argv[1], O_RDONLY);
-	ry = read(fromy, buff, 1024);
+	ry = read(fromy, buffer, 1024);
 	toy = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	do {
 		if (fromy == -1 || ry == -1)
 		{
 			dprintf(STDERR_FILENO,
 				"Error: Can't read from file %s\n", argv[1]);
-			free(buff);
+			free(buffer);
 			exit(98);
 		}
-		wy = write(toy, buff, ry);
+		wy = write(toy, buffer, ry);
 		if (toy == -1 || wy == -1)
 		{
 			dprintf(STDERR_FILENO,
 				"Error: Can't write to %s\n", argv[2]);
-			free(buff);
+			free(buffer);
 			exit(99);
 		}
-		ry = read(fromy, buff, 1024);
+		ry = read(fromy, buffer, 1024);
 		toy = open(argv[2], O_WRONLY | O_APPEND);
 	} while (ry > 0);
 
-	free(buff);
+	free(buffer);
 	close_file(fromy);
 	close_file(toy);
 
