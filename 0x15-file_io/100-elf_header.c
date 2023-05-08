@@ -83,8 +83,7 @@ void print_elf_header(const ElfHeader *header) {
         default:
             printf("Unknown\n");
     }
-
-    printf("ABI Version:                       %d\n", header->abiversion);
+	    printf("ABI Version:                       %d\n", header->abiversion);
 
     printf("Type:                              ");
     switch (header->type) {
@@ -113,13 +112,18 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    const char *filename = argv[1];
-    int fd = open(filename, O_RDONLY);
+    const char *filename;
+    int fd;
+
+    filename = argv[1];
+    fd = open(filename, O_RDONLY);
     if (fd == -1) {
         print_error("Failed to open the file");
     }
-	    ElfHeader header;
-    if (read(fd, &header, sizeof(ElfHeader)) != sizeof(ElfHeader)) {
+
+    ElfHeader header;
+    ssize_t bytes_read = read(fd, &header, sizeof(ElfHeader));
+    if (bytes_read != sizeof(ElfHeader)) {
         print_error("Failed to read ELF header");
     }
 

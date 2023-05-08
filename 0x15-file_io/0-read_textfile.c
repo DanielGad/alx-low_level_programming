@@ -20,7 +20,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	buffy = malloc(sizeof(char) * letters);
 	tyy = read(fddy, buffy, letters);
 	wyy = write(STDOUT_FILENO, buffy, tyy);
-	free(buffy);	
+	free(buffy);
 	close(fddy);
 	return (wyy);
 }

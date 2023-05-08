@@ -31,6 +31,7 @@ char *create_buffer(char *file)
 void close_file(int fd)
 {
 	int dy;
+
 	dy = close(fd);
 
 	if (dy == -1)
